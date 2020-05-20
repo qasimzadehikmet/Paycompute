@@ -5649,11 +5649,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Core_db\\Paycompute\\Paycompute.Entity\\Paycompute.Entity.csproj",
+      "projectUniqueName": "C:\\Projects\\Paycompute\\Paycompute.Entity\\Paycompute.Entity.csproj",
       "projectName": "Paycompute.Entity",
-      "projectPath": "D:\\Core_db\\Paycompute\\Paycompute.Entity\\Paycompute.Entity.csproj",
+      "projectPath": "C:\\Projects\\Paycompute\\Paycompute.Entity\\Paycompute.Entity.csproj",
       "packagesPath": "C:\\Users\\Apokalipsis\\.nuget\\packages\\",
-      "outputPath": "D:\\Core_db\\Paycompute\\Paycompute.Entity\\obj\\",
+      "outputPath": "C:\\Projects\\Paycompute\\Paycompute.Entity\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
