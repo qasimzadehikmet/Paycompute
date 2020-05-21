@@ -5,21 +5,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Web.Mvc;
 
 namespace Paycompute.Service.Implementation
 {
-    class PayComputationService : IPayComputationService
+    public class PayComputationService : IPayComputationService
     {
         private readonly ApplicationDbContext _context;
-
         private decimal contractualEarnings;
         private decimal overtimeHours;
-        public PayComputationService(ApplicationDbContext _context)
+        public PayComputationService(ApplicationDbContext context)
         {
-            this._context = _context;
+            _context = context;
         }
-
         public decimal ContractualEarnings(decimal contractualHours, decimal hoursWorked, decimal hourlyRate)
         {
             if (hoursWorked < contractualHours)
@@ -41,9 +38,9 @@ namespace Paycompute.Service.Implementation
 
         public IEnumerable<PaymentRecord> GetAll() => _context.PaymentRecords.OrderBy(e => e.EmployeeId);
 
-        public IEnumerable<SelectListItem> GetAllTaxYear()
+        public IEnumerable<Microsoft.AspNetCore.Mvc.Rendering.SelectListItem> GetAllTaxYear()
         {
-            var allTaxYear = _context.TaxYears.Select(taxyears => new SelectListItem
+            var allTaxYear = _context.TaxYears.Select(taxyears => new Microsoft.AspNetCore.Mvc.Rendering.SelectListItem
             {
                 Text = taxyears.YearOfTax,
                 Value = taxyears.Id.ToString()

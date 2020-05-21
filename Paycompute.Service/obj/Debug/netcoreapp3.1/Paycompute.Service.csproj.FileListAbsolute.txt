@@ -31,3 +31,4 @@ C:\Projects\Paycompute\Paycompute.Service\obj\Debug\netcoreapp3.1\Paycompute.Ser
 C:\Projects\Paycompute\Paycompute.Service\obj\Debug\netcoreapp3.1\Paycompute.Service.dll
 C:\Projects\Paycompute\Paycompute.Service\obj\Debug\netcoreapp3.1\Paycompute.Service.pdb
 C:\Projects\Paycompute\Paycompute.Service\obj\Debug\netcoreapp3.1\Paycompute.Service.genruntimeconfig.cache
+C:\Projects\Paycompute\Paycompute.Service\obj\Debug\netcoreapp3.1\Paycompute.Service.csproj.CoreCompileInputs.cache

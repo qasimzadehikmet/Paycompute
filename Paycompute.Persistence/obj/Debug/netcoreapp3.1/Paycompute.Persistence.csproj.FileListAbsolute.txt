@@ -27,3 +27,4 @@ C:\Projects\Paycompute\Paycompute.Persistence\obj\Debug\netcoreapp3.1\Paycompute
 C:\Projects\Paycompute\Paycompute.Persistence\obj\Debug\netcoreapp3.1\Paycompute.Persistence.dll
 C:\Projects\Paycompute\Paycompute.Persistence\obj\Debug\netcoreapp3.1\Paycompute.Persistence.pdb
 C:\Projects\Paycompute\Paycompute.Persistence\obj\Debug\netcoreapp3.1\Paycompute.Persistence.genruntimeconfig.cache
+C:\Projects\Paycompute\Paycompute.Persistence\obj\Debug\netcoreapp3.1\Paycompute.Persistence.csproj.CoreCompileInputs.cache
