@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Paycompute.Entity;
 
@@ -13,11 +14,11 @@ namespace Paycompute.Service
         Task UpdateAsync(Employee employee);
         Task UpdateAsync(int employeeId);
         Employee GetById(int employeeId);
-        Task DeleteAsync(int employeeId);
-        IEnumerable<Employee> GetALL();
+        Task DeleteAsync(int employeeId);   
         decimal UnionFees(int Id);
         decimal StudentLoanRepaymentAmount(int Id, decimal totalAmount);
-       
-      
+        IEnumerable<Employee> GetALL();
+        IEnumerable<SelectListItem> GetALLEmployeesForPayroll();
+
     }
 }

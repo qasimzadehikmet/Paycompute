@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 using Paycompute.Entity;
 using Paycompute.Persistence;
 using System;
@@ -33,6 +34,14 @@ namespace Paycompute.Service
 
         public IEnumerable<Employee> GetALL() => _context.Employees;
 
+        public IEnumerable<SelectListItem> GetALLEmployeesForPayroll()
+        {
+            return GetALL().Select(emp => new SelectListItem()
+            {
+                Text = emp.FullName,
+                Value = emp.Id.ToString()
+            });
+        }
 
         public Employee GetById(int employeeId) => _context.Employees.Where(e => e.Id == employeeId).FirstOrDefault();
 
@@ -65,7 +74,9 @@ namespace Paycompute.Service
 
         public decimal UnionFees(int Id)
         {
-            throw new NotImplementedException();
+            var employee = GetById(Id);
+            var fee = employee.UnionMember == UnionMember.Yes ? 10m : 0m;
+            return fee;
         }
 
         public async Task UpdateAsync(Employee employee)

@@ -13,3 +13,17 @@ D:\Core_db\Paycompute\Paycompute.Persistence\obj\Debug\netcoreapp3.1\Paycompute.
 D:\Core_db\Paycompute\Paycompute.Persistence\obj\Debug\netcoreapp3.1\Paycompute.Persistence.pdb
 D:\Core_db\Paycompute\Paycompute.Persistence\obj\Debug\netcoreapp3.1\Paycompute.Persistence.genruntimeconfig.cache
 D:\Core_db\Paycompute\Paycompute.Persistence\obj\Debug\netcoreapp3.1\Paycompute.Persistence.csproj.CoreCompileInputs.cache
+C:\Projects\Paycompute\Paycompute.Persistence\bin\Debug\netcoreapp3.1\Paycompute.Persistence.deps.json
+C:\Projects\Paycompute\Paycompute.Persistence\bin\Debug\netcoreapp3.1\Paycompute.Persistence.runtimeconfig.json
+C:\Projects\Paycompute\Paycompute.Persistence\bin\Debug\netcoreapp3.1\Paycompute.Persistence.runtimeconfig.dev.json
+C:\Projects\Paycompute\Paycompute.Persistence\bin\Debug\netcoreapp3.1\Paycompute.Persistence.dll
+C:\Projects\Paycompute\Paycompute.Persistence\bin\Debug\netcoreapp3.1\Paycompute.Persistence.pdb
+C:\Projects\Paycompute\Paycompute.Persistence\bin\Debug\netcoreapp3.1\Paycompute.Entity.dll
+C:\Projects\Paycompute\Paycompute.Persistence\bin\Debug\netcoreapp3.1\Paycompute.Entity.pdb
+C:\Projects\Paycompute\Paycompute.Persistence\obj\Debug\netcoreapp3.1\Paycompute.Persistence.csprojAssemblyReference.cache
+C:\Projects\Paycompute\Paycompute.Persistence\obj\Debug\netcoreapp3.1\Paycompute.Persistence.AssemblyInfoInputs.cache
+C:\Projects\Paycompute\Paycompute.Persistence\obj\Debug\netcoreapp3.1\Paycompute.Persistence.AssemblyInfo.cs
+C:\Projects\Paycompute\Paycompute.Persistence\obj\Debug\netcoreapp3.1\Paycompute.Persistence.csproj.CopyComplete
+C:\Projects\Paycompute\Paycompute.Persistence\obj\Debug\netcoreapp3.1\Paycompute.Persistence.dll
+C:\Projects\Paycompute\Paycompute.Persistence\obj\Debug\netcoreapp3.1\Paycompute.Persistence.pdb
+C:\Projects\Paycompute\Paycompute.Persistence\obj\Debug\netcoreapp3.1\Paycompute.Persistence.genruntimeconfig.cache
