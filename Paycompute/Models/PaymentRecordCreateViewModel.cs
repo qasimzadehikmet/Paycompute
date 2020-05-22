@@ -14,7 +14,7 @@ namespace Paycompute.Models
         public Employee Employee { get; set; }
         public string  FullName { get; set; }
         public string Nino { get; set; }
-        [DataType(DataType.DateTime), Display(Name = "Pay Date")]
+        [DataType(DataType.Date), Display(Name = "Pay Date")]
         public DateTime PayDate { get; set; } = DateTime.UtcNow;
         [Display(Name = "Pay Month")]
         public string PayMonth { get; set; } = DateTime.Today.Month.ToString();

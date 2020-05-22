@@ -2,7 +2,6 @@
 using Paycompute.Entity;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.Design;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -11,11 +10,11 @@ namespace Paycompute.Service
     public interface IPayComputationService
     {
         Task CreateAsync(PaymentRecord paymentRecord);
-        PaymentRecord GetById(int Id);
-        TaxYear GetTaxYearById(int Id);
+        PaymentRecord GetById(int id);
+        TaxYear GetTaxYearById(int id);
         IEnumerable<PaymentRecord> GetAll();
         IEnumerable<SelectListItem> GetAllTaxYear();
-        decimal OverTimeHours(decimal hoursWorked, decimal contractualHours);
+        decimal OvertimeHours(decimal hoursWorked, decimal contractualHours);
         decimal ContractualEarnings(decimal contractualHours, decimal hoursWorked, decimal hourlyRate);
         decimal OvertimeRate(decimal hourlyRate);
         decimal OvertimeEarnings(decimal overtimeRate, decimal overtimeHours);

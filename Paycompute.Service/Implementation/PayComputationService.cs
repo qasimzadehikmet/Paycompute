@@ -1,4 +1,5 @@
-﻿using Paycompute.Entity;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using Paycompute.Entity;
 using Paycompute.Persistence;
 using System;
 using System.Collections.Generic;
@@ -10,9 +11,10 @@ namespace Paycompute.Service.Implementation
 {
     public class PayComputationService : IPayComputationService
     {
-        private readonly ApplicationDbContext _context;
         private decimal contractualEarnings;
         private decimal overtimeHours;
+        private readonly ApplicationDbContext _context;
+
         public PayComputationService(ApplicationDbContext context)
         {
             _context = context;
@@ -36,29 +38,30 @@ namespace Paycompute.Service.Implementation
             await _context.SaveChangesAsync();
         }
 
-        public IEnumerable<PaymentRecord> GetAll() => _context.PaymentRecords.OrderBy(e => e.EmployeeId);
+        public IEnumerable<PaymentRecord> GetAll() => _context.PaymentRecords.OrderBy(p => p.EmployeeId).ToList();
 
-        public IEnumerable<Microsoft.AspNetCore.Mvc.Rendering.SelectListItem> GetAllTaxYear()
+        public IEnumerable<SelectListItem> GetAllTaxYear()
         {
-            var allTaxYear = _context.TaxYears.Select(taxyears => new Microsoft.AspNetCore.Mvc.Rendering.SelectListItem
+            var allTaxYear = _context.TaxYears.Select(taxYears => new SelectListItem
             {
-                Text = taxyears.YearOfTax,
-                Value = taxyears.Id.ToString()
+                Text = taxYears.YearOfTax,
+                Value = taxYears.Id.ToString()
             });
             return allTaxYear;
         }
 
-        public PaymentRecord GetById(int Id) => _context.PaymentRecords.Where(pay => pay.Id == Id).FirstOrDefault();
+        public PaymentRecord GetById(int id) =>
+            _context.PaymentRecords.Where(pay => pay.Id == id).FirstOrDefault();
 
-        public TaxYear GetTaxYearById(int Id) => _context.TaxYears.Where(year => year.Id == Id).FirstOrDefault();
 
         public decimal NetPay(decimal totalEarnings, decimal totalDeduction)
-        => totalEarnings - totalDeduction;
+            => totalEarnings - totalDeduction;
+
 
         public decimal OvertimeEarnings(decimal overtimeRate, decimal overtimeHours)
-       => overtimeRate * overtimeHours;
+            => overtimeHours * overtimeRate;
 
-        public decimal OverTimeHours(decimal hoursWorked, decimal contractualHours)
+        public decimal OvertimeHours(decimal hoursWorked, decimal contractualHours)
         {
             if (hoursWorked <= contractualHours)
             {
@@ -78,5 +81,8 @@ namespace Paycompute.Service.Implementation
 
         public decimal TotalEarnings(decimal overtimeEarnings, decimal contractualEarnings)
         => overtimeEarnings + contractualEarnings;
+
+        public TaxYear GetTaxYearById(int id)
+        => _context.TaxYears.Where(year => year.Id == id).FirstOrDefault();
     }
 }

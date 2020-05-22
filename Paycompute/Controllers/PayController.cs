@@ -35,6 +35,7 @@ namespace Paycompute.Controllers
         }
         public IActionResult Index()
         {
+          
             var payRecords = _payComputationService.GetAll().Select(pay => new PaymentRecordIndexViewModel
             {
                 Id = pay.Id,
@@ -79,9 +80,9 @@ namespace Paycompute.Controllers
                     HourlyRate = model.HourlyRate,
                     HoursWorked = model.HoursWorked,
                     ContractualHours = model.ContractualHours,
-                    OvertimeHours = overtimeHrs = _payComputationService.OverTimeHours(model.HoursWorked, model.ContractualHours),
-                    ContractualEarnings = _payComputationService.ContractualEarnings(model.ContractualHours, model.HoursWorked, model.HourlyRate),
-                    OvertimeEarnings = _payComputationService.OvertimeEarnings(_payComputationService.OvertimeRate(model.HourlyRate), overtimeHrs),
+                    OvertimeHours = overtimeHrs = _payComputationService.OvertimeHours(model.HoursWorked, model.ContractualHours),
+                    ContractualEarnings = contractualEarnings = _payComputationService.ContractualEarnings(model.ContractualHours, model.HoursWorked, model.HourlyRate),
+                    OvertimeEarnings = overtimeEarnings = _payComputationService.OvertimeEarnings(_payComputationService.OvertimeRate(model.HourlyRate), overtimeHrs),
                     TotalEarnings = totalEarnings = _payComputationService.TotalEarnings(overtimeEarnings, contractualEarnings),
                     Tax = tax = _taxService.TaxAmount(totalEarnings),
                     UnionFee = unionFee = _employeeService.UnionFees(model.EmployeeId),
@@ -89,16 +90,13 @@ namespace Paycompute.Controllers
                     NIC = nationalInsurance = _nationalInsuranceContributionService.NIContribution(totalEarnings),
                     TotalDeduction = totalDeduction = _payComputationService.TotalDeduction(tax, nationalInsurance, studentLoan, unionFee),
                     NetPayment = _payComputationService.NetPay(totalEarnings, totalDeduction)
-
                 };
                 await _payComputationService.CreateAsync(payrecord);
                 return RedirectToAction(nameof(Index));
             }
-
             ViewBag.employees = _employeeService.GetALLEmployeesForPayroll();
             ViewBag.taxYears = _payComputationService.GetAllTaxYear();
-
-            return View(model);
+            return View();
         }
 
         [HttpGet]
