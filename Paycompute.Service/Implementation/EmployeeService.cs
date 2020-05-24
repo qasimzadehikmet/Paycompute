@@ -32,7 +32,7 @@ namespace Paycompute.Service
             await _context.SaveChangesAsync();
         }
 
-        public IEnumerable<Employee> GetALL() => _context.Employees;
+        public IEnumerable<Employee> GetALL() => _context.Employees.AsNoTracking().OrderBy(emp=>emp.FullName);
 
         public IEnumerable<SelectListItem> GetALLEmployeesForPayroll()
         {

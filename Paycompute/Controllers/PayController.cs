@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Paycompute.Entity;
 using Paycompute.Models;
 using Paycompute.Service;
+using RotativaCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -175,6 +176,15 @@ namespace Paycompute.Controllers
                 NetPayment = paymentRecord.NetPayment
             };
             return View(model);
+        }
+        public IActionResult GeneratePayslipPdf(int Id)
+        {
+            var payslip = new ActionAsPdf("Payslip", new { Id = Id })
+            {
+                FileName = "payslip.pdf"
+            };
+
+            return payslip;
         }
     }
 
