@@ -17,8 +17,8 @@ namespace Paycompute.Controllers
     {
         private readonly IEmployeeService _employeeService;
       
-        private readonly IHostingEnvironment _hostingEnvironment;
-        public EmployeeController(IEmployeeService employeeService, IHostingEnvironment hostingEnvironment)
+        private readonly IWebHostEnvironment _hostingEnvironment;
+        public EmployeeController(IEmployeeService employeeService, IWebHostEnvironment hostingEnvironment)
         {
             _employeeService = employeeService;
             _hostingEnvironment = hostingEnvironment;

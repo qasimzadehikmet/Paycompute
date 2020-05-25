@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Paycompute.Entity;
 using Paycompute.Models;
@@ -11,6 +12,7 @@ using System.Threading.Tasks;
 
 namespace Paycompute.Controllers
 {
+    [Authorize(Roles ="Admin,Manager")]
     public class PayController : Controller
     {
         private readonly IPayComputationService _payComputationService;
@@ -53,6 +55,7 @@ namespace Paycompute.Controllers
             });
             return View(payRecords);
         }
+        [Authorize(Roles ="Admin")]
         [HttpGet]
         public IActionResult Create()
         {
@@ -62,6 +65,7 @@ namespace Paycompute.Controllers
             var model = new PaymentRecordCreateViewModel();
             return View(model);
         }
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(PaymentRecordCreateViewModel model)
