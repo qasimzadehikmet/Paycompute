@@ -1674,7 +1674,7 @@
           "lib/netstandard1.6/NuGet.Frameworks.dll": {}
         }
       },
-      "RotativaCore/2.2.0": {
+      "RotativaCore/3.0.0": {
         "type": "package",
         "dependencies": {
           "Microsoft.AspNetCore.Authentication.Cookies": "2.0.0",
@@ -5688,15 +5688,15 @@
         "nuget.frameworks.nuspec"
       ]
     },
-    "RotativaCore/2.2.0": {
-      "sha512": "OIxrnyn4Q0mmht9wj49+ECXi8JR60tuZaXdAU+2XHbP/p/d0OMi6BZahcuRqKhbd5oCvafl2fwWdzoh/wZsjtA==",
+    "RotativaCore/3.0.0": {
+      "sha512": "LiOz6Ec+awCS/dZgW7YNjDcpRIqc0EnRStVacUvfmgLRp9DhfbOomNpwpHW26sKvHTO4CxHsyxsNDwScHnUi+A==",
       "type": "package",
-      "path": "rotativacore/2.2.0",
+      "path": "rotativacore/3.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "lib/netstandard2.0/RotativaCore.dll",
-        "rotativacore.2.2.0.nupkg.sha512",
+        "rotativacore.3.0.0.nupkg.sha512",
         "rotativacore.nuspec"
       ]
     },
@@ -10176,7 +10176,7 @@
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 3.1.3",
       "Paycompute.Entity >= 1.0.0",
       "Paycompute.Service >= 1.0.0",
-      "RotativaCore >= 2.2.0"
+      "RotativaCore >= 3.0.0"
     ]
   },
   "packageFolders": {
@@ -10263,7 +10263,7 @@
           },
           "RotativaCore": {
             "target": "Package",
-            "version": "[2.2.0, )"
+            "version": "[3.0.0, )"
           }
         },
         "imports": [

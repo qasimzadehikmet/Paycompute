@@ -13,8 +13,8 @@ namespace Paycompute.Service
         Task CreateAsync(Employee employee);
         Task UpdateAsync(Employee employee);
         Task UpdateAsync(int employeeId);
+        Task DeleteAsync(int employeeId);
         Employee GetById(int employeeId);
-        Task DeleteAsync(int employeeId);   
         decimal UnionFees(int Id);
         decimal StudentLoanRepaymentAmount(int Id, decimal totalAmount);
         IEnumerable<Employee> GetALL();
