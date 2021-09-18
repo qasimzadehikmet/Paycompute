@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace Paycompute.Controllers
 {
-  //  [Authorize(Roles ="Admin,Manager")]
+   // [Authorize(Roles ="Admin,Manager")]
     public class PayController : Controller
     {
         private readonly IPayComputationService _payComputationService;
@@ -37,8 +37,7 @@ namespace Paycompute.Controllers
             _nationalInsuranceContributionService = nationalInsuranceContributionService;
         }
         public IActionResult Index()
-        {
-          
+        {      
             var payRecords = _payComputationService.GetAll().Select(pay => new PaymentRecordIndexViewModel
             {
                 Id = pay.Id,
@@ -55,7 +54,7 @@ namespace Paycompute.Controllers
             });
             return View(payRecords);
         }
-       // [Authorize(Roles ="Admin")]
+        //[Authorize(Roles ="Admin")]
         [HttpGet]
         public IActionResult Create()
         {

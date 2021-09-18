@@ -19,6 +19,11 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.3" />
     <PackageReference Include="RotativaCore" Version="3.0.0" />
   </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Paycompute.Entity\Paycompute.Entity.csproj" />
+    <ProjectReference Include="..\Paycompute.Service\Paycompute.Service.csproj" />
+  </ItemGroup>
   
   <ItemGroup>
     <None Update="WkHtmlToPdf\wkhtmltoimage.exe">
@@ -27,11 +32,6 @@
     <None Update="WkHtmlToPdf\wkhtmltopdf.exe">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\Paycompute.Entity\Paycompute.Entity.csproj" />
-    <ProjectReference Include="..\Paycompute.Service\Paycompute.Service.csproj" />
   </ItemGroup>
 
 </Project>
